@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class='text-center'>
-        <button class='btn btn-warning text-center '>Click</button>
+    <div>
+        {% for room in rooms %}
+            <div>
+                <a href="{% url 'room' room.id %}">{{ room.name }}</a>
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock %}
